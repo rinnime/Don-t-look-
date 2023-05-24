@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -7,7 +7,7 @@ class Program
         Console.WriteLine("Password");
         Console.WriteLine("Please enter the password:");
 
-        string correctPassword = "hjklfdsag"; //can make the password anything
+        string correctPassword = "hjklfdsag"; // Can make the password anything
         int maxAttempts = 5;
         int attemptCount = 0;
 
@@ -33,10 +33,9 @@ class Program
                 }
                 else
                 {
-                    string joke = GetRandomJoke();
-                    Console.WriteLine("Here's a note for you:");
-                    Console.WriteLine(comment);
-                    Console.WriteLine("Please try again:");
+                    string comment = GetRandomComment();
+                    Console.WriteLine();
+                    Console.WriteLine("Enter password:", comment);
                 }
             }
         }
@@ -51,16 +50,16 @@ class Program
         string[] comments = {
             "Do you really know the password?",
             "That's not the password!",
-            "Hahaha! Keep Trying.",
-            "Try Again.",
+            "Hahaha! Keep trying.",
+            "Try again.",
             "You know you could just make a new password.",
             "I know you don't remember your password, so stop trying.",
-            "How many times are you going to keep guessing.",
+            "How many times are you going to keep guessing?",
             "..."
         };
 
         Random random = new Random();
-        int index = random.Next(comment.Length);
-        return comment[index];
+        int index = random.Next(comments.Length);
+        return comments[index];
     }
 }
