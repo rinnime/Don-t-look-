@@ -7,7 +7,7 @@ class Program
         Console.WriteLine("Password");
         Console.WriteLine("Please enter the password:");
 
-        string correctPassword = "password123";
+        string correctPassword = "hjklfdsag"; //can make the password anything
         int maxAttempts = 5;
         int attemptCount = 0;
 
@@ -34,8 +34,8 @@ class Program
                 else
                 {
                     string joke = GetRandomJoke();
-                    Console.WriteLine("Here's a joke for you:");
-                    Console.WriteLine(joke);
+                    Console.WriteLine("Here's a note for you:");
+                    Console.WriteLine(comment);
                     Console.WriteLine("Please try again:");
                 }
             }
@@ -45,19 +45,22 @@ class Program
         Console.ReadKey();
     }
 
-    static string GetRandomJoke()
+    static string GetRandomComment()
     {
-        // An array of jokes that will be randomly selected
-        string[] jokes = {
-            "Why don't scientists trust atoms? Because they make up everything!",
-            "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!",
-            "Why don't skeletons fight each other? They don't have the guts!",
-            "What's the best thing about Switzerland? I don't know, but their flag is a big plus!",
-            "I used to be a baker, but I couldn't make enough dough!",
+        // An array of comments that will be randomly selected
+        string[] comments = {
+            "Do you really know the password?",
+            "That's not the password!",
+            "Hahaha! Keep Trying.",
+            "Try Again.",
+            "You know you could just make a new password.",
+            "I know you don't remember your password, so stop trying.",
+            "How many times are you going to keep guessing.",
+            "..."
         };
 
         Random random = new Random();
-        int index = random.Next(jokes.Length);
-        return jokes[index];
+        int index = random.Next(comment.Length);
+        return comment[index];
     }
 }
